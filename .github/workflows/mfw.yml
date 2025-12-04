@@ -1,0 +1,17 @@
+name: My first Cookbook Workflow
+on: [workflow_dispatch]
+
+jobs:
+  first_job:
+    name: My first job
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+         echo "Hai Rapid from ${{ github.actor }}."
+         echo "Current branch is {{ github.ref }}."
+         echo "The current directory is `pwd`."
+
+      - name: Checkout
+        uses: actions/checkout@v4.1.0
+
+      - run: tree
