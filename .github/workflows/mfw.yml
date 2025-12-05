@@ -9,9 +9,9 @@ jobs:
     steps:
       - run: |
           echo "Hello ${{ vars.WHO_TO_GREET }} from ${{ github.actor }}."
-          echo "Current branch is ${{ github.ref }}. :alien:"
+          echo "Current branch is ${{ github.ref }}. 👽 "
           echo "The current directory is `pwd`."
-          echo "My secret is ${{ secrets.MY_SECRET }}. :no_mouth:"
+          echo "My secret is ${{ secrets.MY_SECRET }}. 😶"
 
       - name: Checkout
         uses: actions/checkout@v4.1.0
@@ -41,7 +41,7 @@ jobs:
           echo "This is Load Test"
           echo "Hello ${{ vars.WHO_TO_GREET }} from ${{ github.actor }}."
           sec=$(echo ${{ secrets.MY_SECRET }} | sed 's/./& /g')
-          echo "My secret is '$sec'. :secret:"
+          echo "My secret is '$sec'." ㊙️
 
   Production:
     runs-on: ubuntu-latest
@@ -57,8 +57,8 @@ jobs:
           echo "WHO AM I  - ${{ vars.WHO_AM_I }} from ${{ github.actor }}."
           echo "ASTA NU E  - ${{ vars.ASTA_NU_E }} from ${{ github.actor }}."
           sec=$(echo ${{ secrets.MY_SECRET }} | sed 's/./& /g')
-          echo "My secret is '$sec'. :secret:"
+          echo "My secret is '$sec'. ㊙️"
           echo "::debug::This is a debug message."
           echo "::notice::This is a notice message."
-          echo "::warning::This is a warning message. :angry:"
-          echo "::error::This is an error message. :scream:"
+          echo "::warning::This is a warning message." 😠
+          echo "::error::This is an error message. 😱"😱 
