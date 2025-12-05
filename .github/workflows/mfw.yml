@@ -9,6 +9,7 @@ jobs:
     steps:
       - name: 🐩 run-commands
         run: |
+          echo "The SHELL is `echo $SHELL`"
           echo "Hello ${{ vars.WHO_TO_GREET }} from ${{ github.actor }}."
           echo "Current branch is ${{ github.ref }}. 👽 "
           echo "The current directory is `pwd`."
@@ -73,4 +74,3 @@ jobs:
         shell: perl {0}
         run: |
           print "Hello from perl\n";
-
