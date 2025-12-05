@@ -72,5 +72,5 @@ jobs:
       - name: 🐫 perl-stuff
         shell: perl {0}
         run: |
-          say "Hello from perl";
+          print "Hello from perl\n";
 
