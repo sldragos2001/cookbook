@@ -9,9 +9,9 @@ jobs:
     steps:
       - run: |
           echo "Hello ${{ vars.WHO_TO_GREET }} from ${{ github.actor }}."
-          echo "Current branch is ${{ github.ref }}."
+          echo "Current branch is ${{ github.ref }}. :alien:"
           echo "The current directory is `pwd`."
-          echo "My secret is ${{ secrets.MY_SECRET }}."
+          echo "My secret is ${{ secrets.MY_SECRET }}. :no_mouth:"
 
       - name: Checkout
         uses: actions/checkout@v4.1.0
@@ -41,7 +41,7 @@ jobs:
           echo "This is Load Test"
           echo "Hello ${{ vars.WHO_TO_GREET }} from ${{ github.actor }}."
           sec=$(echo ${{ secrets.MY_SECRET }} | sed 's/./& /g')
-          echo "My secret is '$sec'."
+          echo "My secret is '$sec'. :secret:"
 
   Production:
     runs-on: ubuntu-latest
