@@ -54,7 +54,7 @@ jobs:
       - run: |
           echo "This is Production"
           echo "Hello ${{ vars.WHO_TO_GREET }} from ${{ github.actor }}."
-          echo "WHO AM I ${{ vars.WHO_AM_I }} from ${{ github.actor }}."
+          echo "WHO AM I  - ${{ vars.WHO_AM_I }} from ${{ github.actor }}."
           sec=$(echo ${{ secrets.MY_SECRET }} | sed 's/./& /g')
           echo "My secret is '$sec'."
           echo "::debug::This is a debug message."
