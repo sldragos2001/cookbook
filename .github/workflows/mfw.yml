@@ -7,16 +7,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: |
+      - run: 🐩 |
           echo "Hello ${{ vars.WHO_TO_GREET }} from ${{ github.actor }}."
           echo "Current branch is ${{ github.ref }}. 👽 "
           echo "The current directory is `pwd`."
           echo "My secret is ${{ secrets.MY_SECRET }}. 😶"
 
-      - name: Checkout
+      - name: 🐩 Checkout
         uses: actions/checkout@v4.1.0
 
-      - run: |
+      - run: 🐩 |
           tree
           ls -al
 
@@ -27,7 +27,7 @@ jobs:
     needs: first_job
 
     steps:
-      - run: |
+      - run: 🐩 |
           echo "Hello ${{ vars.WHO_TO_GREET }} from ${{ github.actor }}."
           sec=$(echo ${{ secrets.MY_SECRET }} | sed 's/./& /g')
           echo "My secret is '$sec'."
@@ -39,7 +39,7 @@ jobs:
     needs: first_job
 
     steps:
-      - run: |
+      - run: 🐩 |
           echo "This is Load Test"
           echo "Hello ${{ vars.WHO_TO_GREET }} from ${{ github.actor }}."
           sec=$(echo ${{ secrets.MY_SECRET }} | sed 's/./& /g')
@@ -53,7 +53,7 @@ jobs:
     needs: [Test, Load-Test]
 
     steps:
-      - run: |
+      - run: 🐩 |
           echo "This is Production"
           echo "Hello ${{ vars.WHO_TO_GREET }} from ${{ github.actor }}."
           echo "WHO AM I  - ${{ vars.WHO_AM_I }} from ${{ github.actor }}."
