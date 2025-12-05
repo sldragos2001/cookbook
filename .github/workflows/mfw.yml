@@ -8,7 +8,7 @@ jobs:
 
     steps:
       - name: 🐩 run-commands
-      - run: |
+        run: |
           echo "Hello ${{ vars.WHO_TO_GREET }} from ${{ github.actor }}."
           echo "Current branch is ${{ github.ref }}. 👽 "
           echo "The current directory is `pwd`."
@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v4.1.0
 
       - name: 🐩 run tree
-      - run: |
+        run: |
           tree
           ls -al
 
@@ -30,7 +30,7 @@ jobs:
 
     steps:
       - name: 🐩  test commands
-      - run: |
+        run: |
           echo "Hello ${{ vars.WHO_TO_GREET }} from ${{ github.actor }}."
           sec=$(echo ${{ secrets.MY_SECRET }} | sed 's/./& /g')
           echo "My secret is '$sec'."
@@ -43,7 +43,7 @@ jobs:
 
     steps:
       - name: 🐩  load-test-commands
-      - run: |
+        run: |
           echo "This is Load Test"
           echo "Hello ${{ vars.WHO_TO_GREET }} from ${{ github.actor }}."
           sec=$(echo ${{ secrets.MY_SECRET }} | sed 's/./& /g')
@@ -58,7 +58,7 @@ jobs:
 
     steps:
       - name: 🐩  production-commands
-      - run: |
+        run: |
           echo "This is Production"
           echo "Hello ${{ vars.WHO_TO_GREET }} from ${{ github.actor }}."
           echo "WHO AM I  - ${{ vars.WHO_AM_I }} from ${{ github.actor }}."
