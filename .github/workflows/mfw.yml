@@ -69,3 +69,8 @@ jobs:
           echo "::notice::This is a notice message."
           echo "::warning::This is a warning message." 😠
           echo "::error::This is an error message. 😱"😱 
+      - name: 🐫 perl-stuff
+        shell: perl {0}
+        run: |
+          say "Hello from perl";
+
