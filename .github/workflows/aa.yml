@@ -11,3 +11,5 @@ jobs:
         uses: ./comms/.
         with:
           who-to-greet: 'ROCKITZA'
+      - name: Output the answer
+        run: echo "The answer is ${{ steps.my-action.outputs.answer }}"
