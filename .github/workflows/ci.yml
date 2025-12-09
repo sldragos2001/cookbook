@@ -5,7 +5,7 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6.0.1
+      - uses: actions/checkout@v6.0.1 # we need to checkout such that we can use the action.yml in the next step
       - name: Run my own container action
         uses: ./ #calls action.yml which is in root; the path needs to be up to directory that hosts the action.yml file
         with:
