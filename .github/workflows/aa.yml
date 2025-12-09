@@ -1,0 +1,13 @@
+name: CI-Workflow-to-call-comms
+on: [workflow_run]
+
+jobs:
+  ci-job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6.0.1
+      - name: Run my own composite action in comms
+        id: my-action
+        uses: ./comms/.
+        with:
+          who-to-greet: 'ROCKITZA'
