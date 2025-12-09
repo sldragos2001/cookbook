@@ -7,6 +7,9 @@ jobs:
     steps:
       - uses: actions/checkout@v6.0.1 # we need to checkout such that we can use the action.yml in the next step
       - name: Run my own container action
+        id: my-action
         uses: ./ #calls action.yml which is in root; the path needs to be up to directory that hosts the action.yml file
         with:
           who-to-greet: 'ROCKITZA'
+      - name: Output the answer
+        run: echo "The answer is ${{ steps.my-action.outputs.answer }}"
