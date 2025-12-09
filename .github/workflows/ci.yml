@@ -1,0 +1,12 @@
+name: Action CI
+on: [workflow_dispatch]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.1.1
+      - name: Run my own container action
+        uses: ./
+        with:
+          who-to-greet: 'ROCKITZA'
