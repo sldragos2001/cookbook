@@ -5,6 +5,10 @@ inputs:
     description: 'Who to greet'
     required: true
     default: 'World'
+outputs:
+  answer: # This defines one output with an ID of answer
+    description: 'The answer to everything (always 42)'
+    
 runs:   # The run section in the action.yml file defines what type of action it is
   using: 'docker'
   image: 'Dockerfile'
