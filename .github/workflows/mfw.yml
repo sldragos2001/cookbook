@@ -18,7 +18,7 @@ jobs:
           echo "My secret is ${{ secrets.MY_SECRET }}. 😶"
 
       - name: 🐩 Checkout
-        uses: actions/checkout@v4.1.0
+        uses: actions/checkout@v6.0.1
 
       - name: 🐩 Run tree
         run: |
