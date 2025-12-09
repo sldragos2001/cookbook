@@ -8,7 +8,7 @@ jobs:
       - uses: actions/checkout@v6.0.1
       - name: Run my own composite action in comms
         id: my-action
-        uses: ./comms/.
+        uses: ./comms/
         with:
           who-to-greet: 'ROCKITZA'
       - name: Output the answer
