@@ -1,11 +1,11 @@
 name: 'Docker Action Recipe'
-description: 'Greet someone'
+description: 'Greet someone' # This is a Composite action
 inputs:
   who-to-greet:
     description: 'Who to greet'
     required: true
     default: 'World'
-runs:
+runs:   # The run section in the action.yml file defines what type of action it is
   using: 'docker'
   image: 'Dockerfile'
   args:
