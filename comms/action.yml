@@ -15,9 +15,9 @@ runs:
   using: "composite"
   steps:
     - name: Awesome bash script action
-    id: deep-thought
-    shell: bash
-    run: |
-      echo "Hello ${{ inputs.who-to-greet }}."
-      echo "answer=42" >> $GITHUB_OUTPUT
-      echo "So long, and thanks for all the fish."
+      id: deep-thought
+      shell: bash
+      run: |
+        echo "Hello '${{ inputs.who-to-greet }}'."
+        echo "answer=42" >> $GITHUB_OUTPUT
+        echo "So long, and thanks for all the fish."
