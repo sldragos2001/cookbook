@@ -9,6 +9,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: iesire
+        shell: bash
+        run: |
+          echo "Dupa stepul asta nu se mai executa nimic"
+          exit 0
       - name: 🐩 run-commands
         run: |
           echo "The SHELL is `echo $SHELL`"
