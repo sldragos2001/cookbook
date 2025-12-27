@@ -10,10 +10,9 @@ jobs:
 
     steps:
       - name: iesire
-        shell: bash
         run: |
           echo "Dupa stepul asta nu se mai executa nimic"
-          exit 1
+          exit 0
       - name: 🐩 run-commands
         run: |
           echo "The SHELL is `echo $SHELL`"
