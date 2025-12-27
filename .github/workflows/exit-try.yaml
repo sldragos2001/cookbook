@@ -3,15 +3,24 @@ on: [workflow_dispatch]
 
 
 jobs:
-  exit_job:
-    name: 🎌  Exit job
-    runs-on: ubuntu-latest
 
+  exit_job:
+    # Job that is usewd to control what happens in the next job
+    name: 🎌  Exit-job
+    runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.check.outputs.should_run }}
     steps:
       - name: exit step
+        id: check
         run: |
           echo "The next step should not run"
-          exit 0
-      - name: 🐩 run-commands
-        run: |
-          echo "The SHELL is `echo $SHELL`"
+          echo "should_run=false" >> "$GITHUB_OUTPUT"
+
+  main_job:
+    needs: exit_job
+    if : needs.exit_job.outputs.run == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+         echo "This should not run"
