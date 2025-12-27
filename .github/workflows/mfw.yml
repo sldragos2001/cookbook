@@ -13,7 +13,7 @@ jobs:
         shell: bash
         run: |
           echo "Dupa stepul asta nu se mai executa nimic"
-          exit 0
+          exit 1
       - name: 🐩 run-commands
         run: |
           echo "The SHELL is `echo $SHELL`"
