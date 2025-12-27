@@ -1,0 +1,17 @@
+name: EXIT2
+on: [workflow_dispatch]
+
+
+jobs:
+
+  exit_steps:
+    # Job that is usewd to control what happens in the next job
+    name: 🎌  Exit-steps-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1 - step-cu-false
+        if: false
+        run: |
+          echo "This step does not run and teh next is skipped "
+      - name: Step 2 – never runs
+        run: echo "NU ajunge niciodată aici"
