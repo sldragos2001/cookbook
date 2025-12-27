@@ -1,1 +1,17 @@
+name: EXIT-play
+on: [workflow_dispatch]
 
+
+jobs:
+  exit_job:
+    name: 🎌  Exit job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: exit step
+        run: |
+          echo "The next step should not run"
+          exit 0
+      - name: 🐩 run-commands
+        run: |
+          echo "The SHELL is `echo $SHELL`"
