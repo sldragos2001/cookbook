@@ -6,10 +6,10 @@ jobs:
   steps_exit:
     runs-on: ubuntu-latest
     steps:
-      - name: Step 1 – condition fails
+      - name: Step 1 condition fails
         if: false
         run: echo "NU se va executa"
 
-      - name: Step 2 – never runs
+      - name: Step 2 never runs
         #if: steps.step1.outcome == 'success'
         run: echo "NU ajunge niciodată aici"
