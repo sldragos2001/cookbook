@@ -13,7 +13,7 @@ jobs:
       - name: iesire
         run: |
           echo "Dupa stepul asta nu se mai executa nimic"
-          exit 0
+          exit 1
       - name: 🐩 run-commands
         run: |
           echo "The SHELL is `echo $SHELL`"
@@ -38,7 +38,8 @@ jobs:
 
     steps:
       - name: 🐩  test commands
+        env:
+          MY_SECRET: ${{ secrets.MY_SECRET }}
         run: |
-          echo "Hello ${{ vars.WHO_TO_GREET }} from ${{ github.actor }}."
-          sec=$(echo ${{ secrets.MY_SECRET }} | sed 's/./& /g')
-          echo "My secret is '$sec'."
+          sec=$(echo "$MY_SECRET" | sed 's/./& /g')
+          echo "sec=$sec"
