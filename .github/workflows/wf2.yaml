@@ -1,0 +1,44 @@
+name: My WF2
+on: [workflow_dispatch]
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  first_job:
+    name: 🎌  First job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: iesire
+        run: |
+          echo "Dupa stepul asta nu se mai executa nimic"
+          exit 0
+      - name: 🐩 run-commands
+        run: |
+          echo "The SHELL is `echo $SHELL`"
+          echo "Hello ${{ vars.WHO_TO_GREET }} from ${{ github.actor }}."
+          echo "Current branch is ${{ github.ref }}. 👽 "
+          echo "The current directory is `pwd`."
+          echo "My secret is ${{ secrets.MY_SECRET }}. 😶"
+
+      - name: 🐩 Checkout
+        uses: actions/checkout@v6.0.1
+
+      - name: 🐩 Run tree
+        run: |
+          tree
+          ls -al
+
+  Test:
+    runs-on: ubuntu-latest
+    name: 🎌  Test
+    environment: Test
+    needs: first_job
+
+    steps:
+      - name: 🐩  test commands
+        run: |
+          echo "Hello ${{ vars.WHO_TO_GREET }} from ${{ github.actor }}."
+          sec=$(echo ${{ secrets.MY_SECRET }} | sed 's/./& /g')
+          echo "My secret is '$sec'."
