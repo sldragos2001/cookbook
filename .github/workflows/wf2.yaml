@@ -13,7 +13,8 @@ jobs:
       - name: iesire
         run: |
           echo "Dupa stepul asta nu se mai executa nimic"
-          exit 1
+          # Daca mai jos este exit 1 atunci totul se opreste aici
+          exit 0
       - name: 🐩 run-commands
         run: |
           echo "The SHELL is `echo $SHELL`"
