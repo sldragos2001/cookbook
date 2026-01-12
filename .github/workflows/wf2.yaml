@@ -18,6 +18,7 @@ jobs:
       - name: 🐩 run-commands
         run: |
           echo "The SHELL is `echo $SHELL`"
+          echo "The used shell is " "${0}"
           echo "Hello ${{ vars.WHO_TO_GREET }} from ${{ github.actor }}."
           echo "Current branch is ${{ github.ref }}. 👽 "
           echo "The current directory is `pwd`."
